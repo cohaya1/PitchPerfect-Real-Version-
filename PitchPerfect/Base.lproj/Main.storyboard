@@ -40,7 +40,7 @@
                                 </constraints>
                                 <state key="normal" image="Stop"/>
                                 <connections>
-                                    <action selector="StopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bjd-ED-MzZ"/>
+                                    <action selector="StopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rZj-ZU-N2M"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,8 +58,7 @@
                     <navigationItem key="navigationItem" id="JVx-7l-kgH"/>
                     <connections>
                         <outlet property="RecordButton" destination="KZp-Ki-oL4" id="lXL-zj-lYc"/>
-                        <outlet property="StopRecording" destination="8bC-Xf-vdC" id="Sh1-KZ-dAW"/>
-                        <outlet property="StopRecordingButton" destination="Ckv-Qi-Ef5" id="4OM-7i-1mp"/>
+                        <outlet property="StopRecordingButton" destination="Ckv-Qi-Ef5" id="OlC-gs-OXR"/>
                         <outlet property="TapToRecord" destination="WXj-ea-kmW" id="ke0-CW-wCJ"/>
                         <segue destination="dc1-5N-5DY" kind="show" identifier="stoprecording" id="FOk-fu-77Y"/>
                     </connections>
@@ -142,7 +141,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="2MD-Ld-M2f"/>
                     <connections>
-                        <outlet property="Echo" destination="wvn-HR-6oR" id="PGI-WA-93q"/>
+                        <outlet property="Echo" destination="xIo-1J-ROU" id="MI2-eR-tUi"/>
                         <outlet property="FastPitch" destination="aE0-y0-ai7" id="srr-v6-djx"/>
                         <outlet property="HighPitch" destination="hFy-oi-TIW" id="tBW-NA-fVL"/>
                         <outlet property="LowPitch" destination="JfL-eV-n1G" id="JTz-XR-WIy"/>

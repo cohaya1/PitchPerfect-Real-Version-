@@ -10,7 +10,7 @@ import UIKit
 
 class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDelegate {
     var audioRecorder : AVAudioRecorder!
-    @IBOutlet var StopRecording: UIView!
+    
     @IBOutlet weak var TapToRecord: UILabel!
     @IBOutlet weak var StopRecordingButton: UIButton!
     @IBOutlet weak var RecordButton: UIButton!
@@ -46,20 +46,23 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate,AVAud
     }
     
     
-    @IBAction func StopRecording(_ sender: Any) {
+    @IBAction func StopRecording(_ sender: AnyObject) {
         print("Stop Recording button was pressed")
         TapToRecord.text = "Tap to Record"
          StopRecordingButton.isEnabled = false
-        let audiosession = AVAudioSession.sharedInstance()
-        
-            try! audiosession.setActive(false)
+       
         audioRecorder.stop()
+        let audioSession = AVAudioSession.sharedInstance()
+        
+        try! audioSession.setActive(false)
+      
         
         
         
     }
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        //audioRecorder.stop()
         if flag {
             performSegue(withIdentifier: "Stop Recording", sender: audioRecorder.url)
         }
@@ -67,6 +70,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate,AVAud
             print("recording was not successful")
         }
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Stop Recording"{
             let playSoundsVC = segue.destination as! PlaySoundsViewController
