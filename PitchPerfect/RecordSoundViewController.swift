@@ -8,7 +8,7 @@
 import AVFoundation
 import UIKit
 
-class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDelegate {
+class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     var audioRecorder : AVAudioRecorder!
     
     @IBOutlet weak var TapToRecord: UILabel!
@@ -50,8 +50,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate,AVAud
         print("Stop Recording button was pressed")
         TapToRecord.text = "Tap to Record"
          StopRecordingButton.isEnabled = false
-       
-        audioRecorder.stop()
+      //  audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         
         try! audioSession.setActive(false)
@@ -61,8 +60,9 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate,AVAud
         
     }
     
+    
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        //audioRecorder.stop()
+       // audioRecorder.stop()
         if flag {
             performSegue(withIdentifier: "Stop Recording", sender: audioRecorder.url)
         }
@@ -70,6 +70,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate,AVAud
             print("recording was not successful")
         }
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Stop Recording"{

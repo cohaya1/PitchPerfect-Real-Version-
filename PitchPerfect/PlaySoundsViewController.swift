@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
     @IBOutlet weak var HighPitch: UIButton!
@@ -18,14 +19,35 @@ class PlaySoundsViewController: UIViewController {
     @IBOutlet weak var Echo: UIButton!
     @IBOutlet weak var StopRec: UIButton!
     
+   
     var recordedAudioUrl : URL!
+    var audioFile:AVAudioFile!
+    var audioEngine:AVAudioEngine!
+    var audioPlayerNode: AVAudioPlayerNode!
+    var stopTimer: Timer!
+    
+    enum ButtonType: Int {
+        case slow = 0, fast, chipmunk, vader, echo, reverb
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    //configure the UI for not playing
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    @IBAction func playSoundForButton(_ sender: UIButton) {
+        print("Play Button was pressed")
+    }
     
-
+    @IBAction func StopSoundForButton(_ sender: UIButton) {
+        print("Stop Button was pressed")
+    }
     /*
     // MARK: - Navigation
 
