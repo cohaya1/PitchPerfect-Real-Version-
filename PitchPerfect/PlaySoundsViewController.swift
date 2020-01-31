@@ -33,20 +33,36 @@ class PlaySoundsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupAudio()
         // Do any additional setup after loading the view.
     }
     //configure the UI for not playing
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+         configureUI(.notPlaying)
     }
-    @IBAction func playSoundForButton(_ sender: UIButton) {
-        print("Play Button was pressed")
+    @IBAction func playSoundForButton(_ sender: UIButton) { switch(ButtonType(rawValue: sender.tag)!) {
+           case .slow:
+               playSound(rate: 0.5)
+           case .fast:
+               playSound(rate: 1.5)
+           case .chipmunk:
+               playSound(pitch: 1000)
+           case .vader:
+               playSound(pitch: -1000)
+           case .echo:
+               playSound(echo: true)
+           case .reverb:
+               playSound(reverb: true)
+           }
+           //change the UI for playing
+           configureUI(.playing)
     }
     
     @IBAction func StopSoundForButton(_ sender: UIButton) {
         print("Stop Button was pressed")
+        stopAudio()
+
     }
     /*
     // MARK: - Navigation

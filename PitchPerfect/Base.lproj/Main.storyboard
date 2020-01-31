@@ -60,7 +60,7 @@
                         <outlet property="RecordButton" destination="KZp-Ki-oL4" id="lXL-zj-lYc"/>
                         <outlet property="StopRecordingButton" destination="Ckv-Qi-Ef5" id="OlC-gs-OXR"/>
                         <outlet property="TapToRecord" destination="WXj-ea-kmW" id="ke0-CW-wCJ"/>
-                        <segue destination="dc1-5N-5DY" kind="show" identifier="stoprecording" id="FOk-fu-77Y"/>
+                        <segue destination="dc1-5N-5DY" kind="show" identifier="Stop Recording" id="FOk-fu-77Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -81,14 +81,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kS5-YV-y8K">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="259.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIo-1J-ROU" userLabel="Reverb">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIo-1J-ROU" userLabel="Reverb">
                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="259.5"/>
                                                 <state key="normal" image="Reverb"/>
                                                 <connections>
                                                     <action selector="playSoundForButton:" destination="dc1-5N-5DY" eventType="touchUpInside" id="Nip-rJ-CTO"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvn-HR-6oR" userLabel="Echo">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvn-HR-6oR" userLabel="Echo">
                                                 <rect key="frame" x="207" y="0.0" width="207" height="259.5"/>
                                                 <state key="normal" image="Echo"/>
                                                 <connections>
@@ -100,14 +100,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="S1h-S4-EGr">
                                         <rect key="frame" x="0.0" y="257.5" width="414" height="259"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFy-oi-TIW" userLabel="High Pitch">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFy-oi-TIW" userLabel="High Pitch">
                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="259"/>
                                                 <state key="normal" image="HighPitch"/>
                                                 <connections>
                                                     <action selector="playSoundForButton:" destination="dc1-5N-5DY" eventType="touchUpInside" id="Yga-V4-RPs"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfL-eV-n1G" userLabel="Low Pitch">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfL-eV-n1G" userLabel="Low Pitch">
                                                 <rect key="frame" x="207" y="0.0" width="207" height="259"/>
                                                 <state key="normal" image="LowPitch"/>
                                                 <connections>
@@ -126,7 +126,7 @@
                                                     <action selector="playSoundForButton:" destination="dc1-5N-5DY" eventType="touchUpInside" id="r9F-HH-VyC"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aE0-y0-ai7" userLabel="Fast Rabbit button">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aE0-y0-ai7" userLabel="Fast Rabbit button">
                                                 <rect key="frame" x="207" y="0.0" width="207" height="259.5"/>
                                                 <state key="normal" image="Fast"/>
                                                 <connections>
